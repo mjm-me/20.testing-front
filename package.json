@@ -5,15 +5,16 @@
   "type": "module",
   "scripts": {
     "build": "tsc -w",
-    "start": "live server --port=8080 --open=/.dist/index.html",
+    "start": "live-server --port=8080 --open=./dist/index.html",
     "test": "vitest --watch false",
     "test:w": "vitest",
     "test:c": "vitest --watch false --coverage"
   },
   "author": "MJesús Martín",
   "license": "ISC",
-  "description": "Nuevo proyecto para testing",
+  "description": "Nuevo proyecto para Testing en el Front",
   "devDependencies": {
+    "'": "github:testing-library/user-event",
     "@eslint/js": "^9.23.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
