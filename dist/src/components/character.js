@@ -1,16 +1,6 @@
-import type { Character } from '../types/character.js';
 import { render } from './base.js';
-
-
-
-
-
-export function createCharacter(
-  selector = 'body',
-  position: InsertPosition = 'beforeend',
-  character: Character,
-) {
-  const template = /*html*/ `
+export function createCharacter(selector = 'body', position = 'beforeend', character = Character) {
+    const template = /*html*/ `
       <li class="character">
         <div class="card character__card">
           <img src="assets/${character.name}.jpg" alt="Nombre y familia del personaje" class="character__picture card-img-top" />
@@ -45,6 +35,5 @@ export function createCharacter(
         </div>
       </li>
     `;
-
-  render(selector, position, template);
+    render(selector, position, template);
 }
