@@ -7,20 +7,20 @@ describe('Given render function', () => {
     // Arrange
     const selector = 'body';
     const position: InsertPosition = 'beforeend';
-    const template = '<p class="test">Test</p>';
-    // caja blanca, la implementación ¿cómo está escrito en JS? aquí si nos podemos meter dentro del componente
+    // Test de caja blanca o de implementación
     test('Then should render the element', () => {
+      const template = '<p class="test">Test</p>';
       // Act
-      const element = render(selector, position, template) as HTMLElement; // esto depende de la implementación el JS que nosotros escribimos
+      const element = render(selector, position, template) as HTMLElement;
       // Assert
-      expect(element).toBeInstanceOf(HTMLElement); //sería como un test de caja blanca
-      screen.debug(element); // esto es para ver el DOM en el momento que se ejecuta el test
+      expect(element).toBeInstanceOf(HTMLElement);
     });
 
+    // Test de caja negra o de comportamiento
     test('Then should insert the template at the correct position', () => {
       const template = '<h1 class="test">Test</h1>';
       // Act
-      render(selector, position, template); // esto depende de la implementación el JS que nosotros escribimos
+      render(selector, position, template);
       // Assert
       const node = screen.getByRole('heading', { name: 'Test' });
       expect(node).toBeInTheDocument();
